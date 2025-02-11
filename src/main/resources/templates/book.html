@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MakeMyTrip</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+	<style>
+		* {
+			color: #ffffff;
+		}
+
+		body {
+			background-color: #154a7f;
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+
+		.container {
+			background-color: #d03d28;
+			padding: 20px;
+			border-radius: 10px;
+		}
+
+		.navbar {
+			background-color: #d03d28 !important;
+		}
+
+		.navbar-brand img {
+			height: 60px;
+			width: auto;
+		}
+
+		.navbar-nav .nav-link {
+			color: white !important;
+			font-size: 1.4rem;
+		}
+
+		.container1 {
+			padding-left: 12%;
+			border-radius: 10px;
+			width: 100%;
+			flex: 1;
+		}
+
+		.alert-success {
+			background-color: #0ece3e !important;
+			/* Darker green */
+			color: white !important;
+			border-color: #0f5d38 !important;
+			/* Slightly darker border */
+			width: 85%;
+		}
+
+
+		.p-4 {
+			padding: 2%;
+			width: 85%;
+		}
+
+		.form-label {
+			color: black;
+		}
+
+		.btn1 {
+			background-color: #d03d28;
+			border: none;
+			border-radius: 5px;
+			padding: 5px 15px;
+			color: white;
+		}
+
+		.btn2 {
+			background-color: #154a7f;
+			border: none;
+			border-radius: 5px;
+			padding: 5px 15px;
+			text-decoration: none;
+			color: #ffffff;
+		}
+
+		.footer {
+			background-color: #ffffff;
+			height: 13.2vh;
+			padding: 10px 0;
+			margin-top: auto;
+			text-align: center;
+		}
+
+		.socialIcons {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+		}
+
+		.socialIcons a {
+			text-decoration: none;
+			padding: 5px;
+			background-color: white;
+			border-radius: 50%;
+		}
+
+		.socialIcons a i {
+			font-size: 1.5em;
+			color: black;
+			opacity: 0.9;
+		}
+
+		.socialIcons a:hover {
+			background-color: #111;
+			transition: 0.5s;
+		}
+
+		.socialIcons a:hover i {
+			color: white;
+			transition: 0.5s;
+		}
+
+		.footerBottom p,
+		.designer {
+			color: black;
+			margin: 5px 0;
+			font-size: 0.9rem;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg w-100">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="/images/CheckMyTrip.jpg" alt="CheckMyTrip Logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/view">View Ticket</a></li>
+					<li class="nav-item"><a class="nav-link" href="/download">Download Ticket</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container1 mt-5">
+		<h1>Welcome To MakeMyTrip</h1>
+		<h5>Book Your Happiest Journey...</h5>
+
+		<div th:if="${message}" th:class="${messageType == 'success' ? 'alert alert-success' : 'alert alert-danger'}">
+			<span+ th:text="${message}"></span>
+		</div>
+
+		<div class="card p-4 shadow-sm">
+			<form th:action="@{/book-ticket}" th:object="${passenger}" method="post">
+				<div class="mb-3">
+					<label class="form-label">Name of Passenger</label>
+					<input type="text" class="form-control" th:field="*{name}" required>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Email Id</label>
+					<input type="email" class="form-control" th:field="*{email}" required>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Age</label>
+					<input type="number" class="form-control" th:field="*{age}" required>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Date of Journey</label>
+					<input type="date" class="form-control" th:field="*{journeyDate}" required>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Boarding from</label>
+					<input type="text" class="form-control" th:field="*{source}" required>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Destination</label>
+					<input type="text" class="form-control" th:field="*{destination}" required>
+				</div>
+				<div class="d-flex justify-content-between">
+					<button type="submit" class="btn1">Book</button>
+					<a href="/view" class="btn2">View All Tickets</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="socialIcons">
+			<a href="tel:+917620085558"><i class="fa-solid fa-phone"></i></a>
+			<a href="mailto:chaitanyakhowal8@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+			<a href="https://www.linkedin.com/in/chaitanya-khowal-331b47272/"><i class="fa-brands fa-linkedin"></i></a>
+			<a href="https://github.com/ChaitanyaKhowal"><i class="fa-brands fa-github"></i></a>
+			<a href="https://www.instagram.com/devil_since.2001/"><i class="fa-brands fa-instagram"></i></a>
+		</div>
+
+		<div class="footerBottom">
+			<p>Thanks for visiting! Feel free to connect with me.</p>
+			<p>Designer |<span class="designer"> Chaitanya Khowal</span></p>
+			<p>&copy; 2025</p>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
