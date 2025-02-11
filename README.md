@@ -55,14 +55,18 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-## **Screenshots** 🖼
-
-*Add UI screenshots here (if available).*
-
 ## **Author**
 
 👨‍💻 **Chaitanya Khowal**\
-📩 [Email](mailto\:chaitanyakhowal8@gmail.com)\
-🔗 [LinkedIn](https://www.linkedin.com/in/chaitanya-khowal-331b47272/)\
-🐙 [GitHub](https://github.com/ChaitanyaKhowal)
+## 📞 Contact
+- 📧 Email: [chaitanyakhowal8@gmail.com](mailto:chaitanyakhowal8@gmail.com)
+- 💼 LinkedIn: [Chaitanya Khowal](https://www.linkedin.com/in/chaitanyakhowal/)
+- 🐙 GitHub: [ChaitanyaKhowal](https://github.com/ChaitanyaKhowal)
+- 📷 Instagram: [@devil_since.2001](https://www.instagram.com/devil_since.2001/)
+
+## 📜 License
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+🌟 If you like this project, consider giving it a ⭐ on [GitHub](https://github.com/ChaitanyaKhowal/Portfolio-Website)!
 
