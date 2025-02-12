@@ -1,8 +1,8 @@
-package com.makemytrip.response;
+package com.checkmytrip.response;
 
 import java.util.List;
 
-import com.makemytrip.model.PassengerData;
+import com.checkmytrip.model.PassengerData;
 
 public class PassengerResponse {
     private List<PassengerData> dto;

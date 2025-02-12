@@ -1,4 +1,4 @@
-package com.makemytrip.model;
+package com.checkmytrip.model;
 
 import java.time.LocalDate;
 

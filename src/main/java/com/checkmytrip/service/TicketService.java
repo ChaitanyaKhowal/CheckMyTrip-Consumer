@@ -1,4 +1,4 @@
-package com.makemytrip.service;
+package com.checkmytrip.service;
 
 import java.util.Collections;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
-import com.makemytrip.model.PassengerData;
-import com.makemytrip.response.PassengerResponse;
+import com.checkmytrip.model.PassengerData;
+import com.checkmytrip.response.PassengerResponse;
 
 @Service
 public class TicketService {

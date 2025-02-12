@@ -1,4 +1,4 @@
-package com.makemytrip.controller;
+package com.checkmytrip.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.makemytrip.model.PassengerData;
-import com.makemytrip.service.TicketService;
+import com.checkmytrip.model.PassengerData;
+import com.checkmytrip.service.TicketService;
 
 @Controller
 public class TicketController {

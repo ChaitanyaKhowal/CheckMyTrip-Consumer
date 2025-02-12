@@ -1,8 +1,8 @@
-package com.makemytrip.dto;
+package com.checkmytrip.dto;
 
 import java.util.List;
 
-import com.makemytrip.model.PassengerData;
+import com.checkmytrip.model.PassengerData;
 
 import lombok.Data;
 
